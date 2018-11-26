@@ -1,0 +1,30 @@
+<div id="favoritesGoods" class="double">
+  <div class="outline">
+    <div class="title">
+      <h3>{$Think.lang.ds_merchandise_collection}</h3>
+    </div>
+    {notempty name="favorites_list"}
+    <div class="dsm-favorites-goods">
+      <ul id="favoritesGoodsList" class="ds-carousel-skin">
+        {foreach name="favorites_list" item="favorites" }
+        <li>
+          <div class="dsm-goods-thumb-120"><a href="{:url('Goods/index',['goods_id'=>$favorites.goods.goods_id])}" target="_blank"><img alt="" src="{:goods_thumb($favorites['goods'], 240)}"></a>
+            <div class="dsm-goods-price"><em>￥{:ds_price_format($favorites['goods']['goods_price'])}</em></div>
+          </div>
+          <div class="dsm-goods-name"><a href="{:url('Goods/index',['goods_id'=>$favorites.goods.goods_id])}" title="{$favorites.goods.goods_name}" target="_blank">{$favorites.goods.goods_name}</a></div>
+        </li>
+        {/foreach}
+      </ul>
+      <div class="more"><a target="_blank" href="{:url('Memberfavorites/fglist')}">{$Think.lang.view_all_collections}</a></div>
+    </div>
+    {else /}
+    <dl class="null-tip">
+        <dt class="fa fa-heart-o"></dt>
+      <dd>
+        <h4>{$Think.lang.have_no_collections_yet}</h4>
+        <h5>{$Think.lang.new_promotions_price_cuts}</h5>
+      </dd>
+    </dl>
+    {/notempty}
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="eject_con">
+  <form id="post_form" method="post" action="{:url('Memberreturn/delay',['return_id'=>$return.refund_id])}" onsubmit="ajaxpost('post_form','','','onerror')">
+    <div style="padding: 20px 40px;"> {$Think.lang.receiving_prompt_message}
+    </div>
+    <div class="bottom">
+      <label class="submit-border">
+        <input type="submit" class="submit" id="confirm_button" value="{$Think.lang.ds_ok}" />
+      </label><a class="dsm-btn ml5" href="javascript:DialogManager.close('return_delay');">{$Think.lang.ds_cancel}</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,6 @@
+<?php
+
+//memberconsult
+$lang['consult_reply']	= '×ÉÑ¯/»Ø¸´';
+$lang['consult_list_consult_time']	= '×ÉÑ¯Ê±¼ä';
+$lang['consult_list_consult_content']	= '×ÉÑ¯ÄÚÈÝ';

@@ -1,0 +1,49 @@
+<div id="dialog_explain">
+    <div class="eject_con">
+        <div id="warning" class="alert alert-error"></div>
+        <form id="explain_form" method="post">
+            <dl>
+                <dt>{$Think.lang.member_evaluation_content}：</dt>
+                <dd id="geval_content">{$evaluategoods.geval_content}</dd>
+            </dl>
+            <dl>
+                <dt><i class="required">*</i>{$Think.lang.explain_contents}：</dt>
+                <dd>
+                    <textarea id="geval_explain" name="geval_explain" cols="30" rows="10"></textarea>
+                </dd>
+            </dl>
+            <div class="bottom">
+                <input type="submit" value="{$Think.lang.ds_ok}"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#explain_form').validate({
+            errorLabelContainer: $('#warning'),
+            invalidHandler: function (form, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors)
+                {
+                    $('#warning').show();
+                } else
+                {
+                    $('#warning').hide();
+                }
+            },
+            rules: {
+                geval_explain: {
+                    required: true
+                }
+            },
+            messages: {
+                geval_explain: {
+                    required: '<i class="fa fa-exclamation-circle"></i>'
+                }
+            }
+        });
+
+    });
+</script>    
